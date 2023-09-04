@@ -1,0 +1,36 @@
+# Ignore Python bytecode files
+__pycache__/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore IDE-specific files and directories
+.vscode/
+.idea/
+
+# Ignore data and model files that can be generated during training
+best-weights.pt
+*.pth
+*.h5
+
+# Ignore virtual environment files
+venv/
+env/
+*.pyc
+
+# Ignore user-specific settings or credentials
+config.ini
+secrets.json
+
+# Ignore system-specific temporary files
+*.swp
+
+# Ignore any log files or data generated during the project
+logs/
+data/
+
+# Ignore local development settings (customize this as needed)
+*.env
+
+# Ignore output directories (e.g., if you generate HTML reports)
+output/
