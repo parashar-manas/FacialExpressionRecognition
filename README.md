@@ -26,8 +26,8 @@ The dataset must follow an `ImageFolder` directory structure, where the root con
 
 ## Installation  
 
-### 1. Clone the dataset  
+### 1. Clone the repository 
 ```bash
-git clone https://github.com/parth1620/Facial-Expression-Dataset.git
-
+git clone <your-repo-url>
+cd <project-folder>
 
