@@ -1,42 +1,33 @@
 # Facial Expression Recognition System
 
-A Production-Ready Deep Learning Workflow
-This project operationalizes an end-to-end facial expression recognition system built on PyTorch, Timm, and EfficientNet-B0. The solution integrates advanced augmentation strategies, streamlined data loaders, automated training loops, and model-driven inference utilities. The objective is to deliver a scalable, repeatable, and high-performance pipeline for image-based emotion classification.
-
----
-
 ## Overview  
-This repository enables rapid model development for seven key facial-expression classes:
-
-- **angry**
-- **disgust**
-- **fear**
-- **happy**
-- **neutral**
-- **sad**
-- **surprise**
-
-The workflow leverages **EfficientNet-B0**, pre-trained on ImageNet, and fine-tuned on the target dataset using modern training heuristics. The architecture is optimized for extensibility and can be deployed across GPU-accelerated environments.
-
----
+This solution delivers a production-ready deep learning pipeline for facial expression classification across seven categories: angry, disgust, fear, happy, neutral, sad, and surprise. The workflow operationalizes EfficientNet-B0 (via TIMM), advanced augmentation strategies, and GPU-optimized training loops to ensure scalable, repeatable, and high-performance model development for real-world image-based emotion recognition.
 
 ## Key Features  
-- **Production-aligned data ingestion** using `ImageFolder` and PyTorch `DataLoader`  
-- **Robust augmentation pipeline** powered by torchvision transforms  
-- **Transfer-learning optimized model** via TIMM's EfficientNet-B0 backbone  
-- **Comprehensive train–validate loop** with loss tracking and accuracy monitoring  
-- **Automated checkpointing** of best-performing weights  
-- **Inference-ready image preprocessing** with grayscale conversion and normalization  
-- **Insightful visualization utility** for class-probability breakdowns  
+- Production-aligned dataset ingestion using `ImageFolder` and PyTorch `DataLoader`  
+- Robust augmentation pipeline powered by torchvision transforms  
+- EfficientNet-B0 backbone with transfer-learning optimization  
+- Comprehensive training–validation loop with loss/accuracy telemetry  
+- Automated checkpointing for best-performing weights  
+- Inference-ready preprocessing (grayscale support, normalization, tensor conversion)  
+- Visualization utilities for probability distribution and interpretability  
 
----
+## Dataset Requirement  
+The dataset must follow an `ImageFolder` directory structure, where the root contains two primary folders: `train` and `val`. Each of these folders must include seven subdirectories corresponding to the facial expression classes: **angry**, **disgust**, **fear**, **happy**, **neutral**, **sad**, and **surprise**. Every subdirectory should contain its respective image samples, ensuring a consistent layout for model training and validation. 
 
-## Environment Setup  
+## Workflow Architecture  
+1. Clone dataset and configure workspace  
+2. Build PyTorch dataloaders using `ImageFolder`  
+3. Apply augmentation pipeline (resize, normalize, flips, grayscale compliance)  
+4. Load EfficientNet-B0 through TIMM and prepare classifier head  
+5. Execute training loop with accuracy/loss tracking  
+6. Validate per epoch and store best-weight checkpoints  
+7. Run inference utilities for predictions and probability visualization  
 
-Ensure all dependencies are provisioned using the following installs:
+## Installation  
 
+### 1. Clone the dataset  
 ```bash
 git clone https://github.com/parth1620/Facial-Expression-Dataset.git
-pip install -U git+https://github.com/albumentations-team/albumentations
-pip install timm
-pip install --upgrade opencv-contrib-python
+
+
